@@ -19,17 +19,17 @@
     </div>
     <div class="form-field">
         <label for="ID">Enter Personal Number/ID</label>
-        <input id="ID" type="id" placeholder="Personal number" required>
+        <input id="ID" type="id" placeholder="Personal number" required maxlength="11" minlength="11">
         <span class="field-error" id="id-error"></span>
     </div>
     <div class="form-field">
         <label for="phone">Enter your mobile number</label>
-        <input id="phone" type="tel" name="phone" placeholder="Mobile number" required>
+        <input id="phone" type="tel" name="phone" placeholder="Mobile number" required maxlength="9"minlength="9">
         <span class="field-error" id="mobile-error"></span>
     </div>
     <div class="form-field">
         <label for="position">Enter your position</label>
-        <input id="position" type="position" placeholder="Position" >
+        <input id="position" type="position" placeholder="Position" not required minlength="30">
         <span class="field-error" id="position-error"></span>
     </div>
 
