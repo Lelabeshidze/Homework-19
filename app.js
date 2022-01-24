@@ -82,20 +82,11 @@ function validateMobile(){
 }
 
 function validatePosition(){
-    if(!position.validity.valid){
-        position.classList.add('has-error');
-        if(position.validity.tooShort){
-            positionError.innerText = 'Position must contain 30 symbols';
-        }else{
-            positionError.innerText = 'Position is not required';
-        }
-        return false;
-    }else{
-    position.classList.remove('has-error');
-    position.classList.add('has-success');
-    positionError.innerText = '';
-    return true;
-    }
+    if(position.validity.valid) {
+      position.classList.add('has-success');}
+      if(position.validity.valid){
+      positionError.innerText = 'Position is not required';
+      }
 }
 
 username.addEventListener('input', () => {
@@ -119,11 +110,17 @@ signupForm.addEventListener('submit', e => {
   e.preventDefault();
   const isValidUsername = validateUsername();
   const isValidEmail = validateEmail();
+  const isValidID = validateID();
+  const isValidMobile = validateMobile();
+  const isValidPosition = validatePosition();
 
-  if(isValidUsername && isValidEmail){
+  if(isValidUsername && isValidEmail && isValidID && isValidMobile && isValidPosition ){
     const usernameValue = username.value;
     const emailValue = email.value;
-    console.log('We can send information to server.', {username: usernameValue, email: emailValue});
+    const IDValue = userID.value;
+    const mobileValue = mobile.value;
+    const positionValue = position.value;
+    console.log('We can send information to server.', {username: usernameValue, email: emailValue , userID: IDValue , mobile:mobileValue , position: positionValue});
     dynamicModalShow('#user-notification');
   } else {
     dynamicModalShow('#payment-success');

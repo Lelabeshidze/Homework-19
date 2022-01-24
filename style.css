@@ -7,6 +7,9 @@ input.has-error {
 input.has-success {
    border: 1px solid green;
 }
+input.position-length {
+    border: 1px solid red;
+}
 .field-error {
    color: red;
    min-height: 15px;
